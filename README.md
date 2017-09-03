@@ -11,6 +11,9 @@ After checkout go to the checked out directory
 
 2. execute the folowing command "python manage.py runserver"
 
+  * Note by Rik: to have the app function properly now, you have to execute "python manage.py migrate" before "... runserver"
+  * You'll then don't see the lines about the unapplied migrations.
+
 You should see something like this
 ***********************************************************************************************************************************************
 C:\Python\learntocodetogether\python-django-crud\pydjapp>python manage.py runserver

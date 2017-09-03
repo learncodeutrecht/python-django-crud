@@ -6,5 +6,12 @@
     </head>
     <body>
         <h1>Our app's interface</h1>
+
+        <!-- Form for creating new thoughts -->
+        <form action="/" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit"/>
+        </form>
     </body>
 </html>

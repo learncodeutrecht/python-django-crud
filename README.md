@@ -27,7 +27,7 @@ Starting development server at http://127.0.0.1:8000/
 Quit the server with CTRL-BREAK.
 ***********************************************************************************************************************************************
 
-3. Go to browser and open this link "http://127.0.0.1:8000/pdcrud/"
-You should see a page with the following text "This is the index page for now!"
+3. Go to browser and open this link "http://127.0.0.1:8000/"
+You should see a webpage that we can use as our app's interface."
 
 4. YOU CAN START CODING NOW ;)

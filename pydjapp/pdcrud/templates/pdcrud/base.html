@@ -1,0 +1,29 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'pdcrud/style.css' %}"/>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Python Django</title>
+</head>
+<body>
+    <table width="100%">
+        <tr>
+            <td bgcolor="navy" height="25">
+            </td>
+        </tr>
+    </table>
+    {% block content %}
+
+    {% endblock %}
+    <table width="100%">
+        <tr>
+            <td bgcolor="navy" height="25">
+
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

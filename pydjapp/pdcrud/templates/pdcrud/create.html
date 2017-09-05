@@ -1,0 +1,23 @@
+{% extends "pdcrud/base.html" %}
+{% block content %}
+<form action="/create/" method="post">
+    {% csrf_token %}
+    <table align="center">
+        <tr>
+            <td>
+                <h1>Create a new Thought</h1>
+            </td>
+        </tr>
+    </table>
+    <table align="center">
+        {{ form }}
+    </table>
+    <table align="center">
+        <tr>
+            <td>
+                <input type="submit" value="Submit" align="center" />
+            </td>
+        </tr>
+    </table>
+</form>
+{% endblock %}

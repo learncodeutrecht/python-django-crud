@@ -1,17 +1,35 @@
-<!doctype html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Django CRUD app</title>
-    </head>
-    <body>
-        <h1>Our app's interface</h1>
-
-        <!-- Form for creating new thoughts -->
-        <form action="/" method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="Submit"/>
-        </form>
-    </body>
-</html>
+{% extends "pdcrud/base.html" %}
+{% block content %}
+    <table align="center">
+        <tr>
+            <td>
+                <h1 align="center">Python Django CRUD</h1>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <a href="readall">Show All Thoughts</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <a href="create">Create</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <a href="read">Read</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <a href="update">Update</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <a href="delete">Delete</a>
+            </td>
+        </tr>
+    </table>
+{% endblock %}

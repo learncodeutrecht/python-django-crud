@@ -23,7 +23,7 @@ def index(request):
     # Render template, serve it an empty form instance
     return render(request, 'pdcrud/index.html')
 
-#
+# GET and POST for the Create Form for creating THOUGHTS
 def create(request):
     if request.method == 'POST':
         form = ThoughtForm(request.POST)  # Save POSTed form data as form
@@ -39,3 +39,9 @@ def create(request):
         form = ThoughtForm()  # Form, to be served to template when rendering it
 
     return render(request, 'pdcrud/create.html', {'form': form})
+
+# REAL ALL existing thoughts and show them on the HTML page
+def readall(request):
+    thoughts = Thoughts.objects.all()
+    #thoughts = []
+    return render(request, 'pdcrud/thoughts.html', {'thoughts':thoughts})

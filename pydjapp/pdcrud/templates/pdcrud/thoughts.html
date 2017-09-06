@@ -1,0 +1,54 @@
+{% extends "pdcrud/base.html" %}
+{% block content %}
+<table align="center">
+    <tr>
+        <td>
+            <h1>Thoughts</h1>
+        </td>
+    </tr>
+</table>
+<table align="center" border="1" width="50%">
+    <tr>
+        <th>
+            Thought
+        </th>
+        <th>
+            Thought Type
+        </th>
+        <th>
+            Author
+        </th>
+        <th>
+            Date
+        </th>
+    </tr>
+    {% for thought in thoughts %}
+    <tr>
+        <td>
+            {{ thought.thought }}
+        </td>
+        <td>
+            {{ thought.thoughttype }}
+        </td>
+        <td>
+            {{ thought.author }}
+        </td>
+        <td>
+            {{ thought.date }}
+        </td>
+    </tr>
+    {% empty %}
+    <tr>
+    <td colspan="4">
+        No Thoughts as of now!
+    </td>
+    </tr>
+    {% endfor %}
+    <tr>
+        <td colspan="4" align="center">
+            <a href="/">Home</a>
+        </td>
+    </tr>
+
+</table>
+{% endblock %}

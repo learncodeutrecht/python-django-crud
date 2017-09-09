@@ -1,11 +1,11 @@
 {% extends "pdcrud/base.html" %}
 {% block content %}
-<form action="/create/" method="post">
+<form action="{{url}}" method="post">
     {% csrf_token %}
     <table align="center">
         <tr>
             <td>
-                <h1>Create a new Thought</h1>
+                <h1>{{title}}</h1>
             </td>
         </tr>
     </table>

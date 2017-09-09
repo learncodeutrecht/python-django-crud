@@ -21,6 +21,9 @@
         <th>
             Date
         </th>
+        <th>
+            Actions
+        </th>
     </tr>
     {% for thought in thoughts %}
     <tr>
@@ -35,6 +38,9 @@
         </td>
         <td>
             {{ thought.date }}
+        </td>
+        <td>
+            <a href="/update/{{ thought.id }}">Update</a>
         </td>
     </tr>
     {% empty %}

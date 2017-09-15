@@ -51,3 +51,11 @@ def readall(request):
     thoughts = Thoughts.objects.all()
     # thoughts = []
     return render(request, 'pdcrud/thoughts.html', {'thoughts': thoughts})
+
+def delete(request, id):
+    """Delete the record with ID received in request"""
+    print(id)
+    Thoughts.objects.filter(id=id).delete()
+    """fetch remaining records"""
+    thoughts = Thoughts.objects.all()
+    return render(request, 'pdcrud/thoughts.html', {'thoughts': thoughts})

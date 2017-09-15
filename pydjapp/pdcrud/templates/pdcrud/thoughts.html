@@ -21,7 +21,7 @@
         <th>
             Date
         </th>
-        <th>
+        <th colspan="2">
             Actions
         </th>
     </tr>
@@ -42,6 +42,9 @@
         <td>
             <a href="/update/{{ thought.id }}">Update</a>
         </td>
+        <td>
+            <a href="/delete/{{ thought.id }}">Delete</a>
+        </td>
     </tr>
     {% empty %}
     <tr>
@@ -51,7 +54,7 @@
     </tr>
     {% endfor %}
     <tr>
-        <td colspan="4" align="center">
+        <td colspan="6" align="center">
             <a href="/">Home</a>
         </td>
     </tr>

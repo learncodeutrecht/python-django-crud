@@ -51,7 +51,23 @@ def update(request, id):
                     )
     elif request.method == "POST":
         print("log update:" + request.method)
-        return render(request,"pdcrud/index.html")
+        print(request.POST)
+        form = ThoughtForm(request.POST)
+        if form.is_valid():
+            thought = Thoughts.objects.get(id=id)
+            thought.thought = form.cleaned_data['thought']
+            thought.thoughttype  = form.cleaned_data['thoughttype']
+            thought.author  = form.cleaned_data['author']
+            thought.date  = form.cleaned_data['date']
+            thought.save()
+            return HttpResponseRedirect("/readall/")
+        else:
+            return render(request,
+                    'pdcrud/thoughtForm.html',
+                    {'form': form,
+                    'title': 'Update thought.',
+                    'url': '/update/' + str(id) +"/"}
+                    )
 
 def readall(request):
     """REAL ALL existing thoughts and show them on the HTML page."""

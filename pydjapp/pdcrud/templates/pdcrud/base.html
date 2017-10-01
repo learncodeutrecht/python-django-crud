@@ -9,8 +9,53 @@
     <title>Python Django</title>
 </head>
 <body>
-    {% block content %}
+    <header>
+        <div class="header_menu">
+            <div class="side_menu_toggle">
+                <a onclick="toggle_visibility(['side_menu'])">&#9776;</a>
+            </div>
+        </div>
+        <div id="st" class="site_title"><h1 class="header_title">Python Django</h1></div>
+    </header>
+    <aside id="side_menu" style="display: none;">
+        <div class="ie_scroll">
+            <div class="aside_menu">
+                <a href="">Some</a>
+                <a href="">Links</a>
+                <a href="">That</a>
+                <a href="">Go</a>
+                <a href="">Nowhere</a>
+            </div>
+        </div>
+    </aside>
+    <main class="">
+        {% block content %}
 
-    {% endblock %}
+        {% endblock %}
+    </main>
 </body>
+<script>
+    function toggle_visibility(ids) {
+        ids.forEach(function(id){
+            var e = document.getElementById(id);
+            if(e.style.display == 'none') {
+                e.style.display = 'block';
+            }else {
+                e.style.display = 'none';
+            }
+        });
+    }
+    function toggle_visibility_ONLY_DISABLE(ids) {
+        ids.forEach(function(id){document.getElementById(id).style.display = 'none';});
+    }
+    function addEventHandlerToMain() {
+        document.getElementsByTagName("main").item(0).addEventListener('click', function(){
+            toggle_visibility_ONLY_DISABLE(['side_menu'])
+        });
+        document.getElementsByTagName("footer").item(0).addEventListener('click', function(){
+            toggle_visibility_ONLY_DISABLE(['side_menu'])
+        });
+    }
+    addEventHandlerToMain();
+</script>
 </html>

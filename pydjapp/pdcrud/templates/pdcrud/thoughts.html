@@ -1,63 +1,51 @@
 {% extends "pdcrud/base.html" %}
 {% block content %}
-<table align="center">
-    <tr>
-        <td>
-            <h1>Thoughts</h1>
-        </td>
-    </tr>
-</table>
+<h2>Thoughts</h2>
 <table align="center" border="1" width="50%">
     <tr>
         <th>
-            Thought
+            <p class="text">Thought</p>
         </th>
         <th>
-            Thought Type
+            <p class="text">Thought Type</p>
         </th>
         <th>
-            Author
+            <p class="text">Author</p>
         </th>
         <th>
-            Date
+            <p class="text">Date</p>
         </th>
         <th colspan="2">
-            Actions
+            <p class="text">Actions</p>
         </th>
     </tr>
     {% for thought in thoughts %}
     <tr>
         <td>
-            {{ thought.thought }}
+            <p class="text">{{ thought.thought }}</p>
         </td>
         <td>
-            {{ thought.thoughttype }}
+            <p class="text">{{ thought.thoughttype }}</p>
         </td>
         <td>
-            {{ thought.author }}
+            <p class="text">{{ thought.author }}</p>
         </td>
         <td>
-            {{ thought.date }}
+            <p class="text">{{ thought.date }}</p>
         </td>
         <td>
-            <a href="/update/{{ thought.id }}">Update</a>
+            <p class="text"><a href="/update/{{ thought.id }}">Update</a></p>
         </td>
         <td>
-            <a href="/delete/{{ thought.id }}">Delete</a>
+            <p class="text"><a href="/delete/{{ thought.id }}">Delete</a></p>
         </td>
     </tr>
     {% empty %}
     <tr>
     <td colspan="4">
-        No Thoughts as of now!
+        <p class="text">No Thoughts as of now!</p>
     </td>
     </tr>
     {% endfor %}
-    <tr>
-        <td colspan="6" align="center">
-            <a href="/">Home</a>
-        </td>
-    </tr>
-
 </table>
 {% endblock %}

@@ -1,4 +1,6 @@
-.idea
+.idea/
+out/
+*.iml
 __pycache__
 venv
 

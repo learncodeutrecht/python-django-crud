@@ -1,35 +1,23 @@
 {% extends "pdcrud/base.html" %}
 {% block content %}
-    <table align="center">
-        <tr>
-            <td>
-                <h1 align="center">Python Django CRUD</h1>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <a href="readall">Show All Thoughts</a>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <a href="create">Create</a>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <a href="read">Read</a>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <a href="update">Update</a>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <a href="delete">Delete</a>
-            </td>
-        </tr>
-    </table>
+<h2>Phython Django CRUD</h2>
+<p class="text">
+    <a class="normal_link" href="readall">Click here to show all thoughts</a>
+</p>
+<div class="fancy_line"></div>
+<p class="text">
+    <a class="normal_link" href="create">Click here to create a thought</a>
+</p>
+<div class="fancy_line"></div>
+<p class="text">
+    <a class="normal_link" href="read">Click here to show a specific thought</a>
+</p>
+<div class="fancy_line"></div>
+<p class="text">
+    <a class="normal_link" href="update">Click here to show update a thought</a>
+</p>
+<div class="fancy_line"></div>
+<p class="text">
+    <a class="normal_link" href="delete">Click here to show delete a thought</a>
+</p>
 {% endblock %}

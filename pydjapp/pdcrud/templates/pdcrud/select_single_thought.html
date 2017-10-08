@@ -1,0 +1,20 @@
+{% extends "pdcrud/base.html" %}
+{% block content %}
+<h2>Select a thought</h2>
+<table align="center" border="1" width="50%">
+    {% for thought in single_thought %}
+    <tr>
+        <td>
+            <p class="text"><a href="{% url 'pdcrud:single_thought' thought.id %}">{{ thought.thought }}</a></p>
+        </td>
+    </tr>
+    {% empty %}
+    <tr>
+    <td colspan="4">
+        <p class="text">No Thoughts as of now!</p>
+    </td>
+    </tr>
+    {% endfor %}
+</table>
+<p class ="text"><a href= "/">back</a></p>
+{% endblock %}

@@ -1,5 +1,5 @@
 """views for the CRUD actions."""
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 
 # Import form and model for further use in view
@@ -83,3 +83,23 @@ def delete(request, id):
     """fetch remaining records"""
     thoughts = Thoughts.objects.all()
     return render(request, 'pdcrud/thoughts.html', {'thoughts': thoughts})
+
+def select_single_thought(request):
+	"""select a single thought"""
+	single_thought = Thoughts.objects.all()
+	return render(request, 'pdcrud/select_single_thought.html', {'single_thought': single_thought})
+
+def view_single_thought(request, id):
+	""""READ a single tought"""
+	single_thought = get_object_or_404(Thoughts, pk=id)
+	return render(request, 'pdcrud/single_thought.html', {'single_thought' : single_thought})
+
+def delete_thought(request):
+	"""Select which thoughts to delete"""
+	thoughts = Thoughts.objects.all()
+	return render(request, 'pdcrud/delete_thought.html', {'thoughts': thoughts})
+
+def update_thought(request):
+	"""Select which thoughts to update"""
+	thoughts = Thoughts.objects.all()
+	return render(request, 'pdcrud/update_thought.html', {'thoughts': thoughts})

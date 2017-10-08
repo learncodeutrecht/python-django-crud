@@ -1,7 +1,7 @@
 .idea/
 out/
+__pycache__/
 *.iml
-__pycache__
 venv
 
 pycrud

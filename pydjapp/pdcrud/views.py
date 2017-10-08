@@ -37,14 +37,37 @@ def create(request):
 
 def update(request, id):
     """Update a single record."""
-    form = ThoughtForm()
+    if request.method == 'GET':
+        
+       
+        thought = Thoughts.objects.get(id=id)
+        form = ThoughtForm(thought.__dict__)
 
-    return render(request,
-                  'pdcrud/thoughtForm.html',
-                  {'form': form,
-                   'title': 'Update thought.',
-                   'url': '/update/' + str(id)})
-
+        return render(request,
+                    'pdcrud/thoughtForm.html',
+                    {'form': form,
+                    'title': 'Update thought.',
+                    'url': '/update/' + str(id) +"/"}
+                    )
+    elif request.method == "POST":
+        print("log update:" + request.method)
+        print(request.POST)
+        form = ThoughtForm(request.POST)
+        if form.is_valid():
+            thought = Thoughts.objects.get(id=id)
+            thought.thought = form.cleaned_data['thought']
+            thought.thoughttype  = form.cleaned_data['thoughttype']
+            thought.author  = form.cleaned_data['author']
+            thought.date  = form.cleaned_data['date']
+            thought.save()
+            return HttpResponseRedirect("/readall/")
+        else:
+            return render(request,
+                    'pdcrud/thoughtForm.html',
+                    {'form': form,
+                    'title': 'Update thought.',
+                    'url': '/update/' + str(id) +"/"}
+                    )
 
 def readall(request):
     """REAL ALL existing thoughts and show them on the HTML page."""
@@ -55,6 +78,7 @@ def readall(request):
 def delete(request, id):
     """Delete the record with ID received in request"""
     print(id)
+    
     Thoughts.objects.filter(id=id).delete()
     """fetch remaining records"""
     thoughts = Thoughts.objects.all()

@@ -57,10 +57,12 @@ def update(request, id):
         form = TaskForm(request.POST)
         if form.is_valid():
             task = Task.objects.get(id=id)
-            task.task = form.cleaned_data['task']
-            task.tasktype  = form.cleaned_data['tasktype']
-            task.author  = form.cleaned_data['author']
+            task.title = form.cleaned_data['title']
+            task.description  = form.cleaned_data['description']
             task.date  = form.cleaned_data['date']
+            task.deadline = form.cleaned_data['deadline']
+            task.urgent = form.cleaned_data['urgent']
+            task.important = form.cleaned_data['important']
             task.save()
             return HttpResponseRedirect("/readall/")
         else:

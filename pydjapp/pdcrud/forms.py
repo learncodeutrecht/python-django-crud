@@ -5,5 +5,5 @@ class TaskForm(forms.Form):
 	description = forms.CharField(label='Description', widget=forms.Textarea, required=True)
 	date = forms.DateTimeField(label='Date', widget=forms.SelectDateWidget)
 	deadline = forms.DateTimeField(label='Deadline', widget=forms.SelectDateWidget)
-	urgent = forms.BooleanField(label='Urgent', required=True)
-	important = forms.BooleanField(label='Important', required=True)
+	urgent = forms.BooleanField(label='Urgent', required=False)
+	important = forms.BooleanField(label='Important', required=False)

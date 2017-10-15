@@ -81,7 +81,7 @@ def delete(request, id):
     """Delete the record with ID received in request"""
     print(id)
     
-    Tasks.objects.filter(id=id).delete()
+    Task.objects.filter(id=id).delete()
     """fetch remaining records"""
     tasks = Task.objects.all()
     return render(request, 'pdcrud/tasks.html', {'tasks': tasks})

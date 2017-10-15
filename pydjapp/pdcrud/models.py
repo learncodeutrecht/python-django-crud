@@ -1,12 +1,14 @@
 from django.db import models
 
 # Create your models here.
-class Thoughts(models.Model):
-    thought = models.TextField(max_length=100)
-    thoughttype = models.CharField(max_length=50)
-    author = models.CharField(max_length=50)
-    date = models.DateField()
+class Task(models.Model):
+	title = models.TextField(max_length=100)
+	description = models.TextField(max_length=200)
+	date = models.DateField(auto_now_add=True)
+	deadline = models.DateField()
+	urgent = models.BooleanField()
+	important = models.BooleanField()
 
-    def __str__(self):
-        return self.thought + " by " + self.author
+	def __str__(self):
+		return self.task + " by " + self.author
     

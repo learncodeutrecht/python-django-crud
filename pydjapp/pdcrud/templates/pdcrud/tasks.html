@@ -1,0 +1,57 @@
+{% extends "pdcrud/base.html" %}
+{% block content %}
+<h2>Tasks</h2>
+<table align="center" border="1" width="50%">
+    <tr>
+        <th>
+            <p class="text">Task title</p>
+        </th>
+        <th>
+            <p class="text">Task Description</p>
+        </th>
+        <th>
+            <p class="text">Date</p>
+        </th>
+	<th>
+            <p class="text">Deadline</p>
+        </th>
+	<th>
+            <p class="text">Urgent</p>
+        </th>
+	<th>
+            <p class="text">Important</p>
+        </th>
+        <th colspan="2">
+            <p class="text">Actions</p>
+        </th>
+    </tr>
+    {% for task in tasks %}
+    <tr>
+        <td>
+            <p class="text">{{ task.title }}</p>
+        </td>
+        <td>
+            <p class="text">{{ task.description }}</p>
+        </td>
+        <td>
+            <p class="text">{{ task.date }}</p>
+        </td>
+        <td>
+            <p class="text">{{ task.deadline }}</p>
+        </td>
+        <td>
+            <p class="text"><a href="/update/{{ task.id }}">Update</a></p>
+        </td>
+        <td>
+            <p class="text"><a href="/delete/{{ task.id }}">Delete</a></p>
+        </td>
+    </tr>
+    {% empty %}
+    <tr>
+    <td colspan="4">
+        <p class="text">No Tasks as of now!</p>
+    </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

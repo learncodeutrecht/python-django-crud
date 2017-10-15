@@ -1,7 +1,9 @@
 from django import forms
 
-class ThoughtForm(forms.Form):
-    thoughttype = forms.CharField(label='Thought Type', max_length=50, required=True)
-    thought = forms.CharField(label='Thought', widget=forms.Textarea, required=True)
-    author = forms.CharField(label='Author', max_length=50, required=True)
-    date = forms.DateTimeField(label='Date',widget=forms.SelectDateWidget)
+class TaskForm(forms.Form):
+	title = forms.CharField(label='Title', widget=forms.Textarea, required=True)
+	description = forms.CharField(label='Description', widget=forms.Textarea, required=True)
+	date = forms.DateTimeField(label='Date', widget=forms.SelectDateWidget)
+	deadline = forms.DateTimeField(label='Deadline', widget=forms.SelectDateWidget)
+	urgent = forms.BooleanField(label='Urgent', required=True)
+	important = forms.BooleanField(label='Important', required=True)

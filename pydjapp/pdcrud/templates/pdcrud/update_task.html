@@ -1,17 +1,17 @@
 {% extends "pdcrud/base.html" %}
 {% block content %}
-<h2>Select a thought</h2>
+<h2>Click a task to update</h2>
 <table align="center" border="1" width="50%">
-    {% for thought in single_thought %}
+    {% for task in tasks %}
     <tr>
         <td>
-            <p class="text"><a href="{% url 'pdcrud:single_thought' thought.id %}">{{ thought.thought }}</a></p>
+            <p class="text"><a href="/update/{{ task.id }}">{{ task.task }}</a></p>
         </td>
     </tr>
     {% empty %}
     <tr>
     <td colspan="4">
-        <p class="text">No Thoughts as of now!</p>
+        <p class="text">No Tasks as of now!</p>
     </td>
     </tr>
     {% endfor %}

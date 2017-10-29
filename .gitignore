@@ -2,6 +2,15 @@
 out/
 __pycache__/
 *.iml
+
+# the database should be able to be create by running python manage.py migrate
+pydjapp/db.sqlite3
+
+# virtualenv of dex
+pycrud
+
+# virtualenv of philippe (django 1.*)
 venv
 
-pycrud
+# virtualenv of philippe (django 2.0 beta 1)
+venv2

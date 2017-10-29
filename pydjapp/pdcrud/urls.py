@@ -2,6 +2,7 @@ from django.conf.urls import url
 
 from . import views
 
+app_name = 'pydjapp'
 urlpatterns = [
     # ex: /pdcrud/
     url(r'^$', views.readall, name='readall'),

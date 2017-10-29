@@ -10,5 +10,5 @@ class Task(models.Model):
 	important = models.BooleanField()
 
 	def __str__(self):
-		return self.task + " by " + self.author
+		return self.title
     

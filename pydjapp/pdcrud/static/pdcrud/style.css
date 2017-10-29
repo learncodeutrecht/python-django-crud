@@ -563,3 +563,19 @@ div.fancy_line{
     height: 1.5px;
     background: linear-gradient(145deg, red, blue);
 }
+
+/*********************************************************/
+/*Eisenhower matrix*/
+.urgent_important_task{
+
+}
+.nonurgent_important_task{
+
+}
+.urgent_nonimportant_task{
+
+}
+.nonurgent_nonimportant_task{
+
+}
+

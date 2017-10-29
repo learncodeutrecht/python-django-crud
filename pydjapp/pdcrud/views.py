@@ -75,9 +75,33 @@ def update(request, id):
 
 def readall(request):
     """REAL ALL existing tasks and show them on the HTML page."""
-    tasks = Task.objects.all()
-    # tasks = []
+    tasks = Task.objects.all()   
+
     return render(request, 'pdcrud/tasks.html', {'tasks': tasks})
+
+def eisenhower(request):
+	"""REAL ALL existing tasks and show them in Eisenhower matrix."""
+	tasks = Task.objects.all()
+		
+	urgent_important_task = []
+	nonurgent_important_task = []
+	urgent_nonimportant_task = []
+	nonurgent_nonimportant_task = []
+
+	for task in tasks:
+		if task.urgent == True and task.important == True:
+			urgent_important_task.append(task)
+		
+		elif task.urgent == False and task.important == True:
+			nonurgent_important_task.append(task)
+		
+		elif task.urgent == True and task.important == False:
+			urgent_nonimportant_task.append(task)
+
+		else: nonurgent_nonimportant_task.append(task)
+			
+	return render(request, 'pdcrud/tasks.html', 
+	{'urgent_important_task': urgent_important_task, 'nonurgent_important_task' : nonurgent_important_task, 'urgent_nonimportant_task' : urgent_nonimportant_task, 'nonurgent_nonimportant_task' : nonurgent_nonimportant_task})
 
 def delete(request, id):
     """Delete the record with ID received in request"""

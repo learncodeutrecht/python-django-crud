@@ -10,4 +10,5 @@ urlpatterns = [
     url(r'^update/([0-9]+)/$', views.update, name='update'),
     url(r'^readall/$', views.readall, name='readall'),
     url(r'^delete/([0-9]+)/$', views.delete, name='delete'),
+	url(r'^eisenhower/$', views.eisenhower, name='eisenhower'),
 ]

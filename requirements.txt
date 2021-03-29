@@ -36,7 +36,7 @@ ptyprocess==0.5
 py==1.4.33
 pycups==1.9.73
 pycurl==7.43.0
-Pygments==2.2.0
+Pygments==2.7.4
 pygobject==3.20.0
 PyScaffold==2.5.7
 pyserial==3.3
